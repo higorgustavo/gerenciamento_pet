@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block title %} Listagem de funcionários {% endblock %}
+
+{% block content %}
+<div class="box box-primary">
+    <div class="box-header with-border">
+        <h3 class="box-title">Listagem de funcionários</h3>
+    </div>
+    <div class="box-body">
+        <table class="table">
+            <thead>
+            <tr>
+                <th>Nome</th>
+                <th>Data de Nascimento</th>
+                <th>Cargo</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for funcionario in funcionarios %}
+            <tr>
+                <td>{{ funcionario.nome }}</td>
+                <td>{{ funcionario.nascimento|date:"d/m/Y" }}</td>
+                <td>{{ funcionario.get_cargo_display }}</td>
+            </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+        <hr>
+
+        <a href="{% url 'cadastrar-funcionarios' %}">
+            <button class="btn btn-primary">Cadastrar</button>
+        </a>
+    </div>
+</div>
+{% endblock %}

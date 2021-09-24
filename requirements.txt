@@ -1,0 +1,7 @@
+asgiref==3.4.1
+axado.django-localflavor-br==1.0.1
+Django==3.2.7
+django-adminlte2==0.4.3
+pytz==2021.1
+sqlparse==0.4.2
+typing-extensions==3.10.0.2
